@@ -1,4 +1,5 @@
 
+import 'package:cbc_app/screens/home.dart';
 import 'package:flutter/material.dart';
 
 class BottomTrackerNotifer with ChangeNotifier{
@@ -10,11 +11,7 @@ class BottomTrackerNotifer with ChangeNotifier{
     notifyListeners();
   }
   List<Widget> _screens=[
-    Center(
-      child: RaisedButton(
-        onPressed: () {},
-        child: Text("Go"),
-      ),),
+  HomeScreen(),
     Center(
       child: RaisedButton(
         onPressed: () {},
