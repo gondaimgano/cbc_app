@@ -12,9 +12,9 @@ AppBar showChurchAppBar(ChurchBar bar)
   bottom:TabBar(
 
     tabs: [
-      Tab(text: "News Feed",),
-      Tab(text:"Discover",),
-      Tab(text:"Weekly Guide",),
+      Tab(text: "NEWS FEED",),
+      Tab(text:"DISCOVER",),
+      Tab(text:"WEEKLY GUIDE",),
     ],
   ),
   backgroundColor: Colors.transparent,
@@ -24,8 +24,8 @@ AppBar showChurchAppBar(ChurchBar bar)
   bottom:TabBar(
 
     tabs: [
-      Tab(text: "Church Online",),
-      Tab(text:"Location",),
+      Tab(text: "CHURCH ONLINE",),
+      Tab(text:"LOCATION",),
 
     ],
   ),
