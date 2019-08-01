@@ -1,5 +1,9 @@
 
+import 'package:cbc_app/screens/connect.dart';
+import 'package:cbc_app/screens/giving.dart';
 import 'package:cbc_app/screens/home.dart';
+import 'package:cbc_app/screens/location.dart';
+import 'package:cbc_app/screens/media.dart';
 import 'package:flutter/material.dart';
 
 class BottomTrackerNotifer with ChangeNotifier{
@@ -12,26 +16,10 @@ class BottomTrackerNotifer with ChangeNotifier{
   }
   List<Widget> _screens=[
   HomeScreen(),
-    Center(
-      child: RaisedButton(
-        onPressed: () {},
-        child: Text("Media"),
-      ),),
-    Center(
-      child: RaisedButton(
-        onPressed: () {},
-        child: Text("Message"),
-      ),),
-    Center(
-      child: RaisedButton(
-        onPressed: () {},
-        child: Text("Location"),
-      ),),
-    Center(
-      child: RaisedButton(
-        onPressed: () {},
-        child: Text("Give"),
-      ),)
+   MediaScreen(),
+    ConnectScreen(),
+    LocationScreen(),
+    GivingScreen(),
   ];
   Widget selectedScreen()=>_screens[_idx];
 

@@ -1,3 +1,4 @@
+import 'package:cbc_app/widgets.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter/material.dart';
@@ -9,16 +10,7 @@ class HomeScreen extends StatelessWidget {
       length: 3,
       initialIndex: 1,
       child: Scaffold(
-        appBar: AppBar(
-          bottom: TabBar(
-            tabs: [
-              Tab(text: "News Feed",),
-              Tab(text:"Discover",),
-              Tab(text:"Weekly Guide",),
-            ],
-          ),
-          title: Text('Tabs Demo'),
-        ),
+        appBar:showChurchAppBar(ChurchBar.HOME),
         body: TabBarView(
           children: [
             Icon(Icons.directions_car),
