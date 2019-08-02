@@ -24,9 +24,9 @@ class Root extends StatelessWidget {
         theme: themeData.copyWith(
           tabBarTheme: TabBarTheme(
               //indicatorSize: TabBarIndicatorSize.tab,
-              labelStyle: TextStyle(fontFamily: "Rubik", color: Colors.black),
+              labelStyle: TextStyle(fontFamily: "Montserrat", color: Colors.black),
               unselectedLabelStyle:
-                  TextStyle(fontFamily: "Rubik", color: Colors.black),
+                  TextStyle(fontFamily: "Montserrat", color: Colors.black),
               labelColor: Colors.black,
               unselectedLabelColor: Colors.black,
               indicator: UnderlineTabIndicator(
@@ -46,7 +46,7 @@ class Root extends StatelessWidget {
             ),
           ),
           textTheme: themeData.textTheme.apply(
-            fontFamily: "Rubik",
+            fontFamily: "Montserrat",
           ),
         ),
         home: ChurchApp(),
@@ -65,9 +65,9 @@ class ChurchApp extends StatelessWidget {
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.black87,
         type: BottomNavigationBarType.shifting,
-        selectedLabelStyle: TextStyle(fontFamily: "Rubik", color: Colors.black),
+        selectedLabelStyle: TextStyle(fontFamily: "Montserrat", color: Colors.black),
         unselectedLabelStyle:
-            TextStyle(fontFamily: "Rubik", color: Colors.black),
+            TextStyle(fontFamily: "Montserrat", color: Colors.black),
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("Home")),
           BottomNavigationBarItem(

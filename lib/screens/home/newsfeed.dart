@@ -37,31 +37,36 @@ class NewsFeedWidget extends StatelessWidget {
                           borderRadius:BorderRadius.circular(2)
                         ),
                         child: Container(
-                          width: double.infinity,
-                          height: 350,
+
+                          constraints: BoxConstraints.expand(
+                            width: double.infinity,
+                            height: item["description"].toString().length>20? 450 : 350
+                          ),
                           child: Stack(
                             children: <Widget>[
                               Positioned(
                                 top: 0,
                                 left: 0,
                                 right: 0,
-                                height: 350 * 0.70,
+                                height: (item["description"].toString().length>20? 400 : 350) * 0.70,
                                 child: Container(
                                   color: Colors.white,
                                   child: Image.network(item["image"]!=""?item["image"]:"http://www.globallightminds.com/wp-content/uploads/2016/02/Enjoying-life.jpg",fit: BoxFit.cover,),
                                 ),
                               ),
                               Positioned(
-                                bottom: 350 * 0.03,
+                                bottom: (item["description"].toString().length>20? 400 : 350) * 0.03,
                                 left: 10,
                                 child: Wrap(
                                   direction: Axis.vertical,
-                                  spacing: 5,
+                                  spacing: 12,
                                   crossAxisAlignment: WrapCrossAlignment.start,
                                   children: [
+
                                     Container(
                                       margin: EdgeInsets.symmetric(vertical: 5,),
                                       width: MediaQuery.of(context).size.width*0.9,
+
                                         child: Text(item["description"],)),
                                     Wrap(
                                       spacing: 12,
@@ -73,6 +78,7 @@ class NewsFeedWidget extends StatelessWidget {
                                           style: TextStyle(
                                             color: Colors.lightBlue,
                                             fontWeight: FontWeight.bold,
+                                            fontSize: 17
                                           ),
                                         )
                                             : Container(),
@@ -82,6 +88,7 @@ class NewsFeedWidget extends StatelessWidget {
                                           style: TextStyle(
                                             color: Colors.lightBlue,
                                             fontWeight: FontWeight.bold,
+                                            fontSize: 17
                                           ),
                                         )
                                             : Container(),
@@ -90,16 +97,7 @@ class NewsFeedWidget extends StatelessWidget {
                                   ]
                                 ),
                               ),
-                              /*Positioned(
-                                bottom: 350 * 0.2,
-                                left: 10,
-                                child: Text(
-                                  item["heading"],
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),*/
+
                             ],
                           ),
                         ),

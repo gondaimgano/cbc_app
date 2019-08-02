@@ -7,14 +7,7 @@ class WeeklyGuideWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-       /* Positioned(
-          left: 10,
-          width: 2,
-          height: MediaQuery.of(context).size.height,
-          child: Container(
-            color: Colors.grey.withOpacity(0.8),
-          ),
-        ),*/
+
         Positioned.fill(
           child: Container(
             width: MediaQuery.of(context).size.width,
@@ -34,8 +27,8 @@ class WeeklyGuideWidget extends StatelessWidget {
                   height: 300,
                 ),
                 ListTile(
-                  leading: Icon(Icons.rss_feed,size: 30,color: Colors.black,),
-                  title: Text("News and Next Steps",style: Theme.of(context).textTheme.headline.copyWith(fontWeight: FontWeight.bold),),
+                  leading: Icon(Icons.rss_feed,size: 27,color: Colors.black,),
+                  title: Text("News and Next Steps",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(16.0),
@@ -46,7 +39,24 @@ class WeeklyGuideWidget extends StatelessWidget {
                     child:Container(
 
                       width: double.infinity,
-                      height: MediaQuery.of(context).size.height*0.75,
+                      height: 500,
+                      child: ListView(
+                        children: <Widget>[
+                          ..._produceMessages().map((msg)=>
+                          Container(
+                            margin: EdgeInsets.all(8.0),
+                            child: ListTile(
+                              leading: Container(height: 200,
+                              width: 100,
+                              color: Colors.grey,),
+                              title: Text(msg['title'],style: TextStyle(fontWeight: FontWeight.bold),),
+                              subtitle: Text(msg['description']),
+                            ),
+                          )
+
+                          ).toList()
+                        ],
+                      ),
                     ) ,
                   ),
                 ),
@@ -55,11 +65,11 @@ class WeeklyGuideWidget extends StatelessWidget {
                   height: 250,
                   width: double.infinity,
                   child: Container(
-                    child: ListView(
+                    child: Column(
                       children: <Widget>[
                         ListTile(
-                          leading: Icon(Icons.music_video,color: Colors.white,size: 30,),
-                          title: Text("Worship Set",style: TextStyle(color: Colors.white,fontSize: 30,fontFamily: "Rubik",fontWeight: FontWeight.bold),),
+                          leading: Icon(Icons.music_video,color: Colors.white,),
+                          title: Text("Today's Worship Set",style: TextStyle(color: Colors.white,fontSize:22,fontFamily: "Montserrat",fontWeight: FontWeight.bold),),
                         ),
                         Card(
                           margin: EdgeInsets.all(8.0),
@@ -68,14 +78,56 @@ class WeeklyGuideWidget extends StatelessWidget {
                           ),
                           child: Container(
                             width: MediaQuery.of(context).size.width,
-                            height: 250*0.67,
+                            height: 250*0.70,
                             color: Colors.white,
+                            child: ListView(
+                              children: <Widget>[
+                                ..._produceWorshipSet().map((song)=>
+                                    ListTile(
+
+                                     title: Text(song['title']),
+                                      subtitle: Text(song['artist']),
+                                    )
+                                ).toList()
+                              ],
+                            ),
                           ),
                         )
                       ],
                     ),
                   ),
 
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5,)
+                    ),
+                    child:Container(
+
+                      width: double.infinity,
+                      height: 500,
+                      child: ListView(
+                        children: <Widget>[
+                          ..._produceMessages().map((msg)=>
+                              Container(
+                                margin: EdgeInsets.all(8.0),
+                                child: ListTile(
+                                  leading: Container(height: 200,
+                                    width: 100,
+                                    color: Colors.grey,),
+                                  title: Text(msg['title'],style: TextStyle(fontWeight: FontWeight.bold),),
+                                  subtitle: Text(msg['description']),
+                                ),
+                              )
+
+                          ).toList()
+                        ],
+                      ),
+                    ) ,
+                  ),
                 ),
 
               ],
@@ -86,3 +138,47 @@ class WeeklyGuideWidget extends StatelessWidget {
     );
   }
 }
+
+
+List<Map> _produceMessages()=>[
+  {
+    "image":"",
+    "title":"Message Notes",
+    "description":"Get notes from today's message using the YouVersion Bible App.",
+
+    "action":(){}
+  },
+  {
+    "image":"",
+    "title":"Open Door",
+    "description":"We want to get to know you better at Open Door",
+    "action":(){}
+  },
+  {
+    "image":"",
+    "title":"Baptism",
+    "description":"Is baptism your next step? If you have given your life to Jesus, tell the world through baptism!",
+    "action":(){}
+  },
+  {
+    "image":"",
+    "title":"Kids Love LifeKids!",
+    "description":"Once your kids try LifeKids, they'll be begging you to bring them every week!There's something for all of your kids",
+    "action":(){}
+  }
+];
+
+List<Map> _produceWorshipSet()=>[
+  {
+    "title":"All Glory",
+    "artist":"Life.Church Worship"
+  },
+  {
+    "title":"Another In The Fire",
+    "artist":"Hillsong United"
+  },
+  {
+    "title":"Living Hope",
+    "artist":"Phil Wickham"
+  },
+];

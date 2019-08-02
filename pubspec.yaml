@@ -39,10 +39,12 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
   fonts:
-    - family: Rubik
+    - family: Montserrat
       fonts:
-        - asset: fonts/Rubik-Regular.ttf
-        - asset: fonts/Rubik-RegularItalic.ttf
+        - asset: fonts/Montserrat-Regular.ttf
+        - asset: fonts/Montserrat-RegularItalic.ttf
+        - asset: fonts/Montserrat-Bold.ttf
+
 
 
   # The following line ensures that the Material Icons font is
