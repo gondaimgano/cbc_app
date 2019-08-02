@@ -12,13 +12,13 @@ AppBar showChurchAppBar(ChurchBar bar)
   bottom:TabBar(
 
     tabs: [
-      Tab(text: "NEWS FEED",),
-      Tab(text:"DISCOVER",),
-      Tab(text:"WEEKLY GUIDE",),
+      Tab(child: Text("NEWS FEED",),),
+      Tab(child:Text("DISCOVER",),),
+      Tab(child: Text("Weekly Guide",),),
     ],
   ),
   backgroundColor: Colors.transparent,
-  title: Text("Central Baptist Church.ZW",style: TextStyle(fontFamily: "Montserrat",color: Colors.black),),
+  title: Text("Central Baptist Church.ZW",style: TextStyle(color: Colors.black),),
   actions: <Widget>[
     Padding(
       padding: const EdgeInsets.all(8.0),
@@ -29,13 +29,13 @@ AppBar showChurchAppBar(ChurchBar bar)
   bottom:TabBar(
 
     tabs: [
-      Tab(text: "CHURCH ONLINE",),
-      Tab(text:"LOCATION",),
+      Tab(child: Text("CHURCH ONLINE",),),
+      Tab(child:Text("LOCATION",),),
 
     ],
   ),
   backgroundColor: Colors.transparent,
-  title: Text("Central Baptist Church.ZW",style: TextStyle(fontFamily: "Montserrat",color: Colors.black),),
+  title: Text("Central Baptist Church.ZW",style: TextStyle(color: Colors.black),),
   actions: <Widget>[Padding(
     padding: const EdgeInsets.all(8.0),
     child: Icon(Icons.person_pin,color: Colors.black,),
@@ -43,7 +43,7 @@ AppBar showChurchAppBar(ChurchBar bar)
 ):AppBar(
   elevation: 0.0,
   backgroundColor: Colors.transparent,
-  title: Text("Central Baptist Church.ZW",style: TextStyle(fontFamily: "Montserrat",color: Colors.black),),
+  title: Text("Central Baptist Church.ZW",style: TextStyle(color: Colors.black),),
     actions: <Widget>[Padding(
       padding: const EdgeInsets.all(8.0),
       child: Icon(Icons.person_pin,color: Colors.black,),

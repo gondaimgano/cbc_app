@@ -69,7 +69,7 @@ class WeeklyGuideWidget extends StatelessWidget {
                       children: <Widget>[
                         ListTile(
                           leading: Icon(Icons.music_video,color: Colors.white,),
-                          title: Text("Today's Worship Set",style: TextStyle(color: Colors.white,fontSize:22,fontFamily: "Montserrat",fontWeight: FontWeight.bold),),
+                          title: Text("Today's Worship Set",style: TextStyle(color: Colors.white,fontSize:22,fontWeight: FontWeight.bold),),
                         ),
                         Card(
                           margin: EdgeInsets.all(8.0),

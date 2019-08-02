@@ -12,6 +12,7 @@ class HomeScreen extends StatelessWidget {
     return DefaultTabController(
       length: 3,
       initialIndex: 0,
+
       child: Scaffold(
         appBar:showChurchAppBar(ChurchBar.HOME),
         body: TabBarView(

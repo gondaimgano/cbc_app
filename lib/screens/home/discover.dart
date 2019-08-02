@@ -19,21 +19,32 @@ class DiscoverWidget extends StatelessWidget {
                   ),
                   Container(
                     width: double.infinity,
-                    height: 300,
+                    height: 400,
                     child: GridView.count(
                       crossAxisCount: 2,
                       padding: EdgeInsets.all(8.0),
-                      childAspectRatio: 0.8/0.5,
+
                       children: <Widget>[
                         ...item["group"].map((child) => Card(
                                margin: EdgeInsets.all(2.0),
                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(2.0)),
 
                               child: Container(
-                                height: MediaQuery.of(context).size.height * 0.45,
-                                width: MediaQuery.of(context).size.width * 0.45,
-                                child: Text(
-                                  child["header"],
+                               constraints: BoxConstraints.expand(height: 500,),
+                                width: double.infinity,
+                                child: Container(
+                                  margin: EdgeInsets.all(4),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Image.network(child["image"],height:(MediaQuery.of(context).size.height * 0.45)*0.35 ,width: double.infinity,fit: BoxFit.fill,),
+                                      SizedBox(height: 5,),
+
+                                      Text(
+                                        child["header"],
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ))
@@ -53,21 +64,21 @@ List<Map> _produceDiscover() => [
       {
         "title": "Next steps".toUpperCase(),
         "group": [
-          {"header": "Life Group", "image": ""},
-          {"header": "Worship", "image": ""},
-          {"header": "NextGen", "image": ""},
-          {"header": "Careers", "image": ""},
-          {"header": "Serving", "image": ""},
+          {"header": "Life Group", "image": "https://www.life.church/assets/pages/lifegroups/lifegroups-hero-large@3x-0b83720839d61327af62b40d7d24f499c674dc149473d65c3efebdd1066983fb.jpg"},
+          {"header": "Worship", "image": "https://media.swncdn.com/cms/CW/faith/69089-worship-song-singing-cross-church-gettyimages.1200w.tn.jpg"},
+          {"header": "NextGen", "image": "https://www.evangelicalsforsocialaction.org/wp-content/uploads/2017/02/generationnext.jpg"},
+          {"header": "Careers", "image": "https://www.covenantcareers.com//wp-content/uploads/sites/34/2016/04/group-careers-image.jpg"},
+          {"header": "Serving", "image": "https://www.life.church/assets/pages/lifegroups/lifegroups-hero-large@3x-0b83720839d61327af62b40d7d24f499c674dc149473d65c3efebdd1066983fb.jpg"},
         ]
       },
       {
         "title": "Tools for growth".toUpperCase(),
         "group": [
-          {"header": "Leadership Podcast", "image": ""},
-          {"header": "Church Online", "image": ""},
-          {"header": "Young Ladies", "image": ""},
-          {"header": "Generation Faith", "image": ""},
-          {"header": "321 Go", "image": ""},
+          {"header": "Leadership Podcast", "image": "https://www.life.church/assets/pages/lifegroups/lifegroups-hero-large@3x-0b83720839d61327af62b40d7d24f499c674dc149473d65c3efebdd1066983fb.jpg"},
+          {"header": "Church Online", "image": "https://www.life.church/assets/pages/lifegroups/lifegroups-hero-large@3x-0b83720839d61327af62b40d7d24f499c674dc149473d65c3efebdd1066983fb.jpg"},
+          {"header": "Young Ladies", "image": "https://www.life.church/assets/pages/lifegroups/lifegroups-hero-large@3x-0b83720839d61327af62b40d7d24f499c674dc149473d65c3efebdd1066983fb.jpg"},
+          {"header": "Generation Faith", "image": "https://www.life.church/assets/pages/lifegroups/lifegroups-hero-large@3x-0b83720839d61327af62b40d7d24f499c674dc149473d65c3efebdd1066983fb.jpg"},
+          {"header": "321 Go", "image": "https://www.life.church/assets/pages/lifegroups/lifegroups-hero-large@3x-0b83720839d61327af62b40d7d24f499c674dc149473d65c3efebdd1066983fb.jpg"},
         ]
       },
     ];
