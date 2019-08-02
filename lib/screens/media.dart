@@ -29,7 +29,7 @@ class MediaScreen extends StatelessWidget {
             Container(height: 100,width: 150, color: Colors.deepPurple,),
             Container(height: 100,width: 150, color: Colors.deepPurple,),
             Container(height: 100,width: 150, color: Colors.deepPurple,),
-          ],Colors.purple),
+          ],Colors.white),
           _showWidgeeView("Life Groups", null, (){}, [
             Container(height: 150,width: 150, color: Colors.deepPurple,),
             Container(height: 150,width: 150, color: Colors.grey,),
@@ -39,7 +39,7 @@ class MediaScreen extends StatelessWidget {
             Container(height: 150,width: 150, color: Colors.deepPurple,),
             Container(height: 150,width: 150, color: Colors.deepPurple,),
             Container(height: 150,width: 150, color: Colors.deepPurple,),
-          ],Colors.green),
+          ],Colors.white),
           _showWidgeeView("Stories", null, (){}, [
             Container(height: 150,width: 150, color: Colors.deepPurple,),
             Container(height: 150,width: 150, color: Colors.grey,),
@@ -49,7 +49,7 @@ class MediaScreen extends StatelessWidget {
             Container(height: 150,width: 150, color: Colors.deepPurple,),
             Container(height: 150,width: 150, color: Colors.deepPurple,),
             Container(height: 150,width: 150, color: Colors.deepPurple,),
-          ],Colors.blue),
+          ],Colors.white),
         ],
       ),
     );
