@@ -14,24 +14,40 @@ class Root extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider<BottomTrackerNotifer>(builder: (_)=>BottomTrackerNotifer(),),
+        ChangeNotifierProvider<BottomTrackerNotifer>(
+          builder: (_) => BottomTrackerNotifer(),
+        ),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
         theme: themeData.copyWith(
-
-          primaryColor: Colors.lightGreen[800],
+          tabBarTheme: TabBarTheme(
+              //indicatorSize: TabBarIndicatorSize.tab,
+              // labelStyle: TextStyle( color: Colors.black),
+              /* unselectedLabelStyle:
+                  TextStyle( color: Colors.black),*/
+              labelColor: Colors.black,
+              unselectedLabelColor: Colors.black,
+              indicator: UnderlineTabIndicator(
+                  borderSide: BorderSide(
+                color: Colors.black,
+                width: 2,
+              ))),
+          primaryColor: Colors.lightGreen[700],
+          accentColor: Colors.black,
           buttonTheme: themeData.buttonTheme.copyWith(
             textTheme: ButtonTextTheme.primary,
-            buttonColor: Colors.lightGreen[800],
+            buttonColor: Colors.lightGreen[700],
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(
-                Radius.circular(5),
-
+                Radius.circular(30),
               ),
             ),
           ),
+          textTheme: themeData.textTheme.apply(
+              //
+              ),
         ),
         home: ChurchApp(),
       ),
@@ -42,31 +58,37 @@ class Root extends StatelessWidget {
 class ChurchApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    BottomTrackerNotifer notiferTracker=Provider.of(context);
+    BottomTrackerNotifer notiferTracker = Provider.of(context);
     return Scaffold(
-      body:notiferTracker.selectedScreen(),
+      body: notiferTracker.selectedScreen(),
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.black87,
         type: BottomNavigationBarType.shifting,
+        selectedLabelStyle: TextStyle(color: Colors.black),
+        unselectedLabelStyle: TextStyle(color: Colors.black),
         items: [
-        BottomNavigationBarItem(icon: Icon(Icons.home),
-                                 title: Text("Home")),
-        BottomNavigationBarItem(icon: Icon(Icons.play_circle_filled),
-            title: Text("Media")),
-        BottomNavigationBarItem(icon: Icon(Icons.chat),
-            title: Text("Connect")),
-        BottomNavigationBarItem(icon: Icon(Icons.pin_drop),
-            title: Text("Location")),
-        BottomNavigationBarItem(icon: Icon(FontAwesomeIcons.gift),
-            title: Text("Giving")),
-      ],
+          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("Home")),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.play_circle_filled),
+            title: Text("Media"),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.chat),
+            title: Text("Connect"),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.pin_drop),
+            title: Text("Location"),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(FontAwesomeIcons.gift),
+            title: Text("Giving"),
+          ),
+        ],
         currentIndex: notiferTracker.idx,
-        onTap: (i)=>notiferTracker.idx=i,
+        onTap: (i) => notiferTracker.idx = i,
       ),
     );
   }
 }
-
-
-
