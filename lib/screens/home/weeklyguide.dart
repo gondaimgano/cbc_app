@@ -13,6 +13,7 @@ class WeeklyGuideWidget extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             child: ListView(
+              //shrinkWrap: true,
               children: <Widget>[
                 ListTile(
                   leading: Icon(Icons.map,color: Colors.orangeAccent.shade700,size: 24,),
@@ -36,61 +37,56 @@ class WeeklyGuideWidget extends StatelessWidget {
                      shape: RoundedRectangleBorder(
                        borderRadius: BorderRadius.circular(5,)
                      ),
-                    child:Container(
+                    child:Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        ..._produceMessages().map((msg)=>
+                        Container(
+                          margin: EdgeInsets.all(8.0),
+                          child: ListTile(
+                            leading: Container(height: 200,
+                            width: 100,
+                            color: Colors.grey,),
+                            title: Text(msg['title'],style: TextStyle(fontWeight: FontWeight.bold),),
+                            subtitle: Text(msg['description']),
+                          ),
+                        )
 
-                      width: double.infinity,
-                      height: 500,
-                      child: ListView(
-                        children: <Widget>[
-                          ..._produceMessages().map((msg)=>
-                          Container(
-                            margin: EdgeInsets.all(8.0),
-                            child: ListTile(
-                              leading: Container(height: 200,
-                              width: 100,
-                              color: Colors.grey,),
-                              title: Text(msg['title'],style: TextStyle(fontWeight: FontWeight.bold),),
-                              subtitle: Text(msg['description']),
-                            ),
-                          )
-
-                          ).toList()
-                        ],
-                      ),
+                        ).toList()
+                      ],
                     ) ,
                   ),
                 ),
                 Container(
                   color: Colors.deepPurple,
-                  height: 250,
+
                   width: double.infinity,
                   child: Container(
-                    child: Column(
+                    child:Column(
+                      mainAxisSize: MainAxisSize.min,
+                     /* shrinkWrap: true,
+                      physics: ClampingScrollPhysics(),*/
                       children: <Widget>[
                         ListTile(
                           leading: Icon(Icons.music_video,color: Colors.white,),
                           title: Text("Today's Worship Set",style: TextStyle(color: Colors.white,fontSize:22,fontWeight: FontWeight.bold),),
                         ),
                         Card(
-                          margin: EdgeInsets.all(8.0),
+                          margin: EdgeInsets.symmetric(horizontal:16.0,vertical: 8.0),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20)
                           ),
-                          child: Container(
-                            width: MediaQuery.of(context).size.width,
-                            height: 250*0.70,
-                            color: Colors.white,
-                            child: ListView(
-                              children: <Widget>[
-                                ..._produceWorshipSet().map((song)=>
-                                    ListTile(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              ..._produceWorshipSet().map((song)=>
+                                  ListTile(
 
-                                     title: Text(song['title']),
-                                      subtitle: Text(song['artist']),
-                                    )
-                                ).toList()
-                              ],
-                            ),
+                                   title: Text(song['title']),
+                                    subtitle: Text(song['artist']),
+                                  )
+                              ).toList()
+                            ],
                           ),
                         )
                       ],
@@ -105,27 +101,23 @@ class WeeklyGuideWidget extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5,)
                     ),
-                    child:Container(
+                    child:Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        ..._produceMessages().map((msg)=>
+                            Container(
+                              margin: EdgeInsets.all(8.0),
+                              child: ListTile(
+                                leading: Container(height: 200,
+                                  width: 100,
+                                  color: Colors.grey,),
+                                title: Text(msg['title'],style: TextStyle(fontWeight: FontWeight.bold),),
+                                subtitle: Text(msg['description']),
+                              ),
+                            )
 
-                      width: double.infinity,
-                      height: 500,
-                      child: ListView(
-                        children: <Widget>[
-                          ..._produceMessages().map((msg)=>
-                              Container(
-                                margin: EdgeInsets.all(8.0),
-                                child: ListTile(
-                                  leading: Container(height: 200,
-                                    width: 100,
-                                    color: Colors.grey,),
-                                  title: Text(msg['title'],style: TextStyle(fontWeight: FontWeight.bold),),
-                                  subtitle: Text(msg['description']),
-                                ),
-                              )
-
-                          ).toList()
-                        ],
-                      ),
+                        ).toList()
+                      ],
                     ) ,
                   ),
                 ),
