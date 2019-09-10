@@ -37,9 +37,9 @@ class WeeklyGuideWidget extends StatelessWidget {
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: <Widget>[
-                                  ...model.updatesByCity().map((city)=>
+                                  ...model.updatesByCity().map((item)=>
                                   ListTile(
-                                    title: Text(city.city,softWrap: true,style: TextStyle(fontSize: 36,),),
+                                    title: Text(item.city,softWrap: true,style: TextStyle(fontSize: 36,),),
                                   ),).toList()
                                 ],
                               ),
@@ -73,7 +73,7 @@ class WeeklyGuideWidget extends StatelessWidget {
                       child:Column(
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
-                          ...model.produceMessages().map((msg)=>
+                         ...model.produceMessages().map((msg)=>
                           Container(
                             margin: EdgeInsets.all(8.0),
                             child: ListTile(

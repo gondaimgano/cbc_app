@@ -68,7 +68,7 @@ class ApiService with ChangeNotifier{
         },
       ]
     },
-  ].map((i)=>DiscoverBean.fromJson(i),);
+  ].map((i)=>DiscoverBean.fromJson(i),).toList();
 
   List<Feed> produceFeed() {
     return [
@@ -107,14 +107,14 @@ class ApiService with ChangeNotifier{
         "share": true,
         "read": true
       },
-    ].map((i)=>Feed.fromJson(i),);
+    ].map((i)=>Feed.fromJson(i),).toList();
   }
 
   List<CityBean> updatesByCity()=>[
     {"city":"bulawayo"},
     {"city":"harare"},
     {"city":"masvingo"},
-  ].map((i)=>CityBean.fromJson(i),);
+  ].map((i)=>CityBean.fromJson(i),).toList();
 
   List<NoticeBean> produceMessages()=>[
     {
@@ -146,7 +146,7 @@ class ApiService with ChangeNotifier{
       "description":"Once your kids try LifeKids, they'll be begging you to bring them every week!There's something for all of your kids",
       "action":(){}
     }
-  ].map((i)=>NoticeBean.fromJson(i),);
+  ].map((i)=>NoticeBean.fromJson(i),).toList();
 
   List<SongBean> produceWorshipSet()=>[
     {
@@ -175,6 +175,6 @@ class ApiService with ChangeNotifier{
       "artist":"Central Baptist Church"
     }
 
-  ].map((i)=>SongBean.fromJson(i));
+  ].map((i)=>SongBean.fromJson(i)).toList();
 }
 

@@ -11,11 +11,11 @@ class NoticeBean {
       {this.city, this.image, this.title, this.description, this.action});
 
   NoticeBean.fromJson(Map<String, dynamic> json) {
-    city = json['city'].cast<String>();
+   // city = json['city'];
     image = json['image'];
     title = json['title'];
     description = json['description'];
-    action = json['action'];
+    //action = json['action'];
   }
 
   Map<String, dynamic> toJson() {
@@ -24,7 +24,7 @@ class NoticeBean {
     data['image'] = this.image;
     data['title'] = this.title;
     data['description'] = this.description;
-    data['action'] = this.action;
+   // data['action'] = this.action;
     return data;
   }
 }

@@ -4,7 +4,7 @@ class CityBean {
   CityBean({this.city});
 
   CityBean.fromJson(Map<String, dynamic> json) {
-    city = json['city'];
+    city = json['city']??"Harare";
   }
 
   Map<String, dynamic> toJson() {
