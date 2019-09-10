@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter/material.dart';
+
 
 class WeeklyGuideWidget extends StatelessWidget {
   @override
@@ -17,7 +17,37 @@ class WeeklyGuideWidget extends StatelessWidget {
               children: <Widget>[
                 ListTile(
                   leading: Icon(Icons.map,color: Colors.orangeAccent.shade700,size: 24,),
-                  title: Text("Harare"),
+                  title: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text("Harare"),
+
+                      InkWell(
+                        onTap: (){
+                          showModalBottomSheet(context: context, builder: (context)=>
+                          Container(
+                            constraints: BoxConstraints.expand(width: double.infinity,height:500,
+
+                            ),
+                            margin: EdgeInsets.all(20),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                ...updatesByCity().map((city)=>
+                                ListTile(
+                                  title: Text(city["city"],softWrap: true,style: TextStyle(fontSize: 36,),),
+                                ),).toList()
+                              ],
+                            ),
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(topLeft: Radius.circular(40),topRight: Radius.circular(40))
+                          ));
+                        },
+                          child: RotatedBox(child: Icon(Icons.arrow_forward_ios,color: Colors.grey,size: 24,),quarterTurns: 1,))
+                    ],
+                  ),
                   subtitle: Text("Meet at CBC"),
                   trailing: RaisedButton(onPressed: (){},child: Text("Give Now"),),
                 ),
@@ -64,8 +94,7 @@ class WeeklyGuideWidget extends StatelessWidget {
                   child: Container(
                     child:Column(
                       mainAxisSize: MainAxisSize.min,
-                     /* shrinkWrap: true,
-                      physics: ClampingScrollPhysics(),*/
+
                       children: <Widget>[
                         ListTile(
                           leading: Icon(Icons.music_video,color: Colors.white,),
@@ -132,8 +161,15 @@ class WeeklyGuideWidget extends StatelessWidget {
 }
 
 
+List<Map> updatesByCity()=>[
+  {"city":"bulawayo"},
+  {"city":"harare"},
+  {"city":"masvingo"},
+];
+
 List<Map> _produceMessages()=>[
   {
+    "city":["harare","bulawayo","masvingo"],
     "image":"",
     "title":"Message Notes",
     "description":"Get notes from today's message using the YouVersion Bible App.",
@@ -141,18 +177,21 @@ List<Map> _produceMessages()=>[
     "action":(){}
   },
   {
+    "city":["harare","bulawayo"],
     "image":"",
     "title":"Open Door",
     "description":"We want to get to know you better at Open Door",
     "action":(){}
   },
   {
+    "city":["bulawayo","harare"],
     "image":"",
     "title":"Baptism",
     "description":"Is baptism your next step? If you have given your life to Jesus, tell the world through baptism!",
     "action":(){}
   },
   {
+    "city":"bulawayo",
     "image":"",
     "title":"Kids Love LifeKids!",
     "description":"Once your kids try LifeKids, they'll be begging you to bring them every week!There's something for all of your kids",
@@ -162,15 +201,29 @@ List<Map> _produceMessages()=>[
 
 List<Map> _produceWorshipSet()=>[
   {
+    "city":"harare",
     "title":"All Glory",
     "artist":"Life.Church Worship"
   },
   {
+    "city":"bulawayo",
     "title":"Another In The Fire",
     "artist":"Hillsong United"
   },
   {
+    "city":"harare",
     "title":"Living Hope",
     "artist":"Phil Wickham"
   },
+  {
+    "city":"harare",
+    "title":"All glory",
+    "artist":"Central Baptist Church"
+  },
+  {
+    "city":"harare",
+    "title":"All glory",
+    "artist":"Central Baptist Church"
+  }
+
 ];

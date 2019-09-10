@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter/material.dart';
 
+double screenWidth = 0.0;
 class NewsFeedWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    screenWidth = MediaQuery.of(context).size.width;
     return Stack(
       children: <Widget>[
         Positioned(
@@ -30,6 +31,7 @@ class NewsFeedWidget extends StatelessWidget {
                   subtitle: Text("Please join and be enriched"),
                 ),
               ),
+
               ..._produceFeed()
                   .map((item) => Card(
                         margin: EdgeInsets.all(4.0),
@@ -115,7 +117,7 @@ List<Map> _produceFeed() {
   return [
     {
       "heading": "A better today and a brighter tomorrow",
-      "description": "",
+      "description": "A chance for a new start and new beginnings",
       "image": "https://previews.123rf.com/images/evgenyatamanenko/evgenyatamanenko1509/evgenyatamanenko150900051/45241193-happy-girl-enjoying-life-and-freedom-in-the-autumn-on-the-nature.jpg",
       "share": true,
       "read": false,
@@ -144,7 +146,7 @@ List<Map> _produceFeed() {
     {
       "heading": "",
       "description": "",
-      "image": "",
+      "image": "http://www.globallightminds.com/wp-content/uploads/2016/02/Enjoying-life.jpg",
       "share": true,
       "read": true,
     },

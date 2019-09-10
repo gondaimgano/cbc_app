@@ -15,7 +15,7 @@ void main() async {
 
 
   return runApp(Root());
-}
+ }
 
 class Root extends StatelessWidget {
   // This widget is the root of your application.
