@@ -1,3 +1,4 @@
+import 'package:cbc_app/api/ApiService.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -26,6 +27,7 @@ class Root extends StatelessWidget {
         ChangeNotifierProvider<BottomTrackerNotifer>(
           builder: (_) => BottomTrackerNotifer(),
         ),
+        ChangeNotifierProvider<ApiService>.value(value: ApiService()),
       ],
       child: MaterialApp(
 
