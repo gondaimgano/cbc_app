@@ -1,3 +1,4 @@
+import 'package:cbc_app/models/FeedBean.dart';
 import 'package:flutter/material.dart';
 
 
@@ -42,7 +43,7 @@ class NewsFeedWidget extends StatelessWidget {
 
                           constraints: BoxConstraints.expand(
                             width: double.infinity,
-                            height: item["description"].toString().length>20? 450 : 350
+                            height: item.description.toString().length>20? 450 : 350
                           ),
                           child: Stack(
                             children: <Widget>[
@@ -50,14 +51,14 @@ class NewsFeedWidget extends StatelessWidget {
                                 top: 0,
                                 left: 0,
                                 right: 0,
-                                height: (item["description"].toString().length>20? 400 : 350) * 0.70,
+                                height: (item.description.toString().length>20? 400 : 350) * 0.70,
                                 child: Container(
                                   color: Colors.white,
-                                  child: Image.network(item["image"]!=""?item["image"]:"http://www.globallightminds.com/wp-content/uploads/2016/02/Enjoying-life.jpg",fit: BoxFit.cover,),
+                                  child: Image.network(item.image!=""?item.image:"http://www.globallightminds.com/wp-content/uploads/2016/02/Enjoying-life.jpg",fit: BoxFit.cover,),
                                 ),
                               ),
                               Positioned(
-                                bottom: (item["description"].toString().length>20? 400 : 350) * 0.03,
+                                bottom: (item.description.toString().length>20? 400 : 350) * 0.03,
                                 left: 10,
                                 child: Wrap(
                                   direction: Axis.vertical,
@@ -69,12 +70,12 @@ class NewsFeedWidget extends StatelessWidget {
                                       margin: EdgeInsets.symmetric(vertical: 5,),
                                       width: MediaQuery.of(context).size.width*0.9,
 
-                                        child: Text(item["description"],)),
+                                        child: Text(item.description,)),
                                     Wrap(
                                       spacing: 12,
                                       crossAxisAlignment: WrapCrossAlignment.start,
                                       children: <Widget>[
-                                        item['share']
+                                        item.share
                                             ? Text(
                                           "Share",
                                           style: TextStyle(
@@ -84,7 +85,7 @@ class NewsFeedWidget extends StatelessWidget {
                                           ),
                                         )
                                             : Container(),
-                                        item["read"]
+                                        item.read
                                             ? Text(
                                           "Read",
                                           style: TextStyle(
@@ -113,7 +114,7 @@ class NewsFeedWidget extends StatelessWidget {
   }
 }
 
-List<Map> _produceFeed() {
+List<Feed> _produceFeed() {
   return [
     {
       "heading": "A better today and a brighter tomorrow",
@@ -150,5 +151,5 @@ List<Map> _produceFeed() {
       "share": true,
       "read": true
     },
-  ];
+  ].map((i)=>Feed.fromJson(i),);
 }

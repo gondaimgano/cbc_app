@@ -1,3 +1,4 @@
+import 'package:cbc_app/models/DiscoverBean.dart';
 import 'package:flutter/material.dart';
 
 
@@ -14,7 +15,7 @@ class DiscoverWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   ListTile(
-                    title: Text(item["title"]),
+                    title: Text(item.title),
                   ),
                   Container(
                     width: double.infinity,
@@ -23,8 +24,8 @@ class DiscoverWidget extends StatelessWidget {
                       crossAxisCount: 2,
                       padding: EdgeInsets.all(8.0),
                       children: <Widget>[
-                        ...item["group"].map(
-                          (child) => Card(
+                        ...item.group.map(
+                          (i) => Card(
                             margin: EdgeInsets.all(2.0),
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(2.0)),
@@ -39,7 +40,7 @@ class DiscoverWidget extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
                                     Image.network(
-                                      child["image"],
+                                      i.image,
                                       height:
                                           (MediaQuery.of(context).size.height *
                                                   0.45) *
@@ -51,7 +52,7 @@ class DiscoverWidget extends StatelessWidget {
                                       height: 5,
                                     ),
                                     Text(
-                                      child["header"],
+                                      i.header,
                                     ),
                                   ],
                                 ),
@@ -71,7 +72,7 @@ class DiscoverWidget extends StatelessWidget {
   }
 }
 
-List<Map> _produceDiscover() => [
+List<DiscoverBean> _produceDiscover() => [
       {
         "title": "Next steps".toUpperCase(),
         "group": [
@@ -132,4 +133,4 @@ List<Map> _produceDiscover() => [
           },
         ]
       },
-    ];
+    ].map((i)=>DiscoverBean.fromJson(i),);

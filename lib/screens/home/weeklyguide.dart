@@ -1,3 +1,6 @@
+import 'package:cbc_app/models/CityBean.dart';
+import 'package:cbc_app/models/NoticeBean.dart';
+import 'package:cbc_app/models/SongBean.dart';
 import 'package:flutter/material.dart';
 
 
@@ -36,7 +39,7 @@ class WeeklyGuideWidget extends StatelessWidget {
                               children: <Widget>[
                                 ...updatesByCity().map((city)=>
                                 ListTile(
-                                  title: Text(city["city"],softWrap: true,style: TextStyle(fontSize: 36,),),
+                                  title: Text(city.city,softWrap: true,style: TextStyle(fontSize: 36,),),
                                 ),).toList()
                               ],
                             ),
@@ -77,8 +80,8 @@ class WeeklyGuideWidget extends StatelessWidget {
                             leading: Container(height: 200,
                             width: 100,
                             color: Colors.grey,),
-                            title: Text(msg['title'],style: TextStyle(fontWeight: FontWeight.bold),),
-                            subtitle: Text(msg['description']),
+                            title: Text(msg.title,style: TextStyle(fontWeight: FontWeight.bold),),
+                            subtitle: Text(msg.description),
                           ),
                         )
 
@@ -111,8 +114,8 @@ class WeeklyGuideWidget extends StatelessWidget {
                               ..._produceWorshipSet().map((song)=>
                                   ListTile(
 
-                                   title: Text(song['title']),
-                                    subtitle: Text(song['artist']),
+                                   title: Text(song.title),
+                                    subtitle: Text(song.artist),
                                   )
                               ).toList()
                             ],
@@ -140,8 +143,8 @@ class WeeklyGuideWidget extends StatelessWidget {
                                 leading: Container(height: 200,
                                   width: 100,
                                   color: Colors.grey,),
-                                title: Text(msg['title'],style: TextStyle(fontWeight: FontWeight.bold),),
-                                subtitle: Text(msg['description']),
+                                title: Text(msg.title,style: TextStyle(fontWeight: FontWeight.bold),),
+                                subtitle: Text(msg.description),
                               ),
                             )
 
@@ -161,13 +164,13 @@ class WeeklyGuideWidget extends StatelessWidget {
 }
 
 
-List<Map> updatesByCity()=>[
+List<CityBean> updatesByCity()=>[
   {"city":"bulawayo"},
   {"city":"harare"},
   {"city":"masvingo"},
-];
+].map((i)=>CityBean.fromJson(i),);
 
-List<Map> _produceMessages()=>[
+List<NoticeBean> _produceMessages()=>[
   {
     "city":["harare","bulawayo","masvingo"],
     "image":"",
@@ -197,9 +200,9 @@ List<Map> _produceMessages()=>[
     "description":"Once your kids try LifeKids, they'll be begging you to bring them every week!There's something for all of your kids",
     "action":(){}
   }
-];
+].map((i)=>NoticeBean.fromJson(i),);
 
-List<Map> _produceWorshipSet()=>[
+List<SongBean> _produceWorshipSet()=>[
   {
     "city":"harare",
     "title":"All Glory",
@@ -226,4 +229,4 @@ List<Map> _produceWorshipSet()=>[
     "artist":"Central Baptist Church"
   }
 
-];
+].map((i)=>SongBean.fromJson(i));
