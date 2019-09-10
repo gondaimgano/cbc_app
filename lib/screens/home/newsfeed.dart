@@ -120,35 +120,35 @@ List<Map> _produceFeed() {
       "description": "A chance for a new start and new beginnings",
       "image": "https://previews.123rf.com/images/evgenyatamanenko/evgenyatamanenko1509/evgenyatamanenko150900051/45241193-happy-girl-enjoying-life-and-freedom-in-the-autumn-on-the-nature.jpg",
       "share": true,
-      "read": false,
+      "read": false
     },
     {
       "heading": "The Adoption process: Ready?",
-      "description": '''A lot of people can't help but feel curious when they learn someone is adopted. Their life experience may be different from their own because of it. Questions like, "Do you know who your biological parents are?" ''',
+      "description": "A lot of people can't help but feel curious when they learn someone is adopted. Their life experience may be different from their own because of it. Questions like, Do you know who your biological parents are?",
       "image": "https://www.adoptivefamilies.com/wp-content/uploads/2014/06/newsletter-multicultural-family-ts-487054278.jpg",
       "share": true,
-      "read": true,
+      "read": true
     },
     {
       "heading": "Depression",
       "description": "#life #death #prosperity",
       "image": "https://www.unilad.co.uk/wp-content/uploads/2017/01/6419UNILAD-imageoptim-sad-man.jpeg",
       "share": true,
-      "read": false,
+      "read": false
     },
     {
       "heading": "",
       "description": "",
       "image": "",
       "share": true,
-      "read": true,
+      "read": true
     },
     {
       "heading": "",
       "description": "",
       "image": "http://www.globallightminds.com/wp-content/uploads/2016/02/Enjoying-life.jpg",
       "share": true,
-      "read": true,
+      "read": true
     },
   ];
 }
