@@ -140,7 +140,7 @@ class ApiService with ChangeNotifier{
       "action":(){}
     },
     {
-      "city":"bulawayo",
+      "city":["bulawayo"],
       "image":"",
       "title":"Kids Love LifeKids!",
       "description":"Once your kids try LifeKids, they'll be begging you to bring them every week!There's something for all of your kids",
