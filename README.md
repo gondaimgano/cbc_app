@@ -1,16 +1,12 @@
 # cbc_app
 
-Central Baptist Church Application
+This my personal project I am working on for my local church.
+
+Thought I share my progress
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+see below the screen shots
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="movies.png" width="425"/> <img src="home_cbc.png" width="425"/>
+<img src="movie2.png" width="425"/> <img src="messages.png" width="425"/>
