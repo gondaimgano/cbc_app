@@ -9,4 +9,4 @@ Thought I share my progress
 see below the screen shots
 
 <img src="movies.png" width="425"/> <img src="home_cbc.png" width="425"/>
-<img src="movie2.png" width="425"/> <img src="messages.png" width="425"/>
+<img src="movie2.png" width="425"/> <img src="home2_cbc.png" width="425"/>
