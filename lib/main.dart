@@ -1,4 +1,6 @@
+import 'package:cbc_app/api/ApiService.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -6,7 +8,15 @@ import 'notifiers/bottomNavigationNotifier.dart';
 
 ThemeData themeData = ThemeData.light();
 
-void main() => runApp(Root());
+void main() async {
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown
+  ]);
+
+
+  return runApp(Root());
+ }
 
 class Root extends StatelessWidget {
   // This widget is the root of your application.
@@ -17,9 +27,10 @@ class Root extends StatelessWidget {
         ChangeNotifierProvider<BottomTrackerNotifer>(
           builder: (_) => BottomTrackerNotifer(),
         ),
+        ChangeNotifierProvider<ApiService>.value(value: ApiService()),
       ],
       child: MaterialApp(
-        title: 'Flutter Demo',
+
         debugShowCheckedModeBanner: false,
         theme: themeData.copyWith(
           tabBarTheme: TabBarTheme(
